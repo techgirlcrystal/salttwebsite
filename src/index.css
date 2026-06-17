@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-cream text-navy font-body antialiased;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-head uppercase tracking-wide;
+  }
+}
+
+@layer components {
+  .btn-red {
+    @apply inline-flex items-center justify-center bg-saltred text-white font-head uppercase
+           tracking-widest font-semibold px-7 py-3.5 text-sm rounded-md
+           transition-all duration-200 hover:bg-red-700 hover:-translate-y-0.5
+           shadow-card active:translate-y-0;
+  }
+  .btn-dark {
+    @apply inline-flex items-center justify-center bg-ink text-white font-head uppercase
+           tracking-widest font-semibold px-7 py-3.5 text-sm rounded-md
+           transition-all duration-200 hover:bg-charcoal hover:-translate-y-0.5;
+  }
+  .section-pad {
+    @apply px-5 sm:px-8 lg:px-16 py-16 sm:py-20;
+  }
+  .field {
+    @apply w-full rounded-md bg-white border border-navy/15 px-4 py-3 text-navy
+           placeholder-navy/45 outline-none focus:border-saltred focus:ring-1
+           focus:ring-saltred transition;
+  }
+  .field-dark {
+    @apply w-full rounded-md bg-black/10 border border-black/20 px-4 py-3 text-black
+           placeholder-black/50 outline-none focus:border-black focus:ring-1
+           focus:ring-black transition;
+  }
+}
+
+@keyframes livepulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.35; transform: scale(0.85); }
+}
+.live-dot {
+  animation: livepulse 1.2s ease-in-out infinite;
+}
